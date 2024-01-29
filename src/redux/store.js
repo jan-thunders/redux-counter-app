@@ -1,12 +1,27 @@
-import { createStore } from "redux";  
+import { createStore, combineReducers } from "redux";  
 import counterReducer from "./reducers/counterReducer";
+import songReducer from "./reducers/songReducer";
+
+const rootReducer = combineReducers(
+    {
+    counter: counterReducer,
+    song: songReducer
+   }
+)
 
 
-const store = createStore(counterReducer)  // 1
+const store = createStore(rootReducer)  // 1
 
 // console.log(store) 
 
 export default store
+
+// dispatch({type: CLICKED_SONG, payload: song})
+
+// songReducer(null, {type: CLICKED_SONG, payload: song}) => {id: 1, name: "song1"}
+
+
+
 
 
 // step1: 

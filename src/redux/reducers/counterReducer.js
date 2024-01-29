@@ -4,7 +4,12 @@ const intialState = 0
 
 //counterReducer(0, {type: INCREASE}) 
 // counterReducer(0, {type: INCREASE, value: 100})
+
+
+
+
 const counterReducer = (state=intialState, action) => {
+   console.log("Counter Reducer is executed", state, action)
      
     switch(action.type){
         case INCREASE: 
@@ -18,6 +23,9 @@ const counterReducer = (state=intialState, action) => {
     }
 
 }
+
+// store => rootReducer => counterReducer( valueFrom Store.count, action)
+// store => rootReducer => songReducer( valuefromStore.song, action)
 
 // counterReducer()
 
